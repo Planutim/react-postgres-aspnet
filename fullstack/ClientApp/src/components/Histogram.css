@@ -1,0 +1,60 @@
+﻿.histogram{
+    align-self: stretch;
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    grid-template-rows: 1fr 50px;
+    grid-template-areas:
+        "y-axis graph ."
+        ". x-axis .";
+}
+
+.histogram-bars{
+    grid-area: graph;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    height: 500px;
+    font-size: 0px;
+}
+.Y-axis{
+    grid-area: y-axis;
+    /*background-color: aqua;*/
+    border-right: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.X-axis{
+    grid-area: x-axis;
+    /*background-color: mediumaquamarine;*/
+    border-top: 1px solid black;
+}
+
+.histogram-item {
+    max-width: 100px;
+    background-color: lightcoral;
+    width: 100%;
+    margin: 3px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    transition: height .5s linear;
+
+    height:100%;
+}
+
+.histogram-item:nth-child(odd) {
+    background-color: rgba(74,157,255,0.8);
+}
+
+/*.histogram-item:nth-child(3n) {
+    background-color: cadetblue;
+}*/
+
+.histogram-text {
+    font-size: 16px;
+    transition-delay: .3s;
+    color: white;
+}

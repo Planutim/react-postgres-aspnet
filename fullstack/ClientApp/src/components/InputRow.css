@@ -1,0 +1,14 @@
+﻿.input-row input{
+    width: 100%;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+    .input-row input:focus {
+        outline: none;
+        border-color:#4A9DFF;
+    }
+.input-row{
+    padding: 0;
+}

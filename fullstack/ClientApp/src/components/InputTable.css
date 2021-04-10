@@ -1,0 +1,34 @@
+﻿.form{
+    align-self: center;
+    width: 60%;
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.table-container {
+    padding: 15px;
+    max-height: 500px;
+    overflow: auto;
+}
+.input-table tr {
+    border-bottom: 1px solid #5D6E97;
+}
+.input-table td,th{
+    padding: 5px 10px;
+}
+.input-table th {
+    text-align: center;
+    color: #5D6D97;
+}
+.button-add {
+    align-self: flex-start;
+    color: #5D6D97;
+    font-size: 32px;
+    border: none;
+    background-color:inherit;
+}
+.button-add:focus{
+    outline: none;
+}

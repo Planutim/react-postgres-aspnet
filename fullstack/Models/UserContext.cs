@@ -12,6 +12,7 @@ namespace fullstack.Models
         public UserContext(DbContextOptions<UserContext> options)
             : base(options)
         {
+            Database.EnsureCreated();
         }
     }
 }

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,12 @@ namespace fullstack.Controllers
     {
         private readonly ILogger<UsersController> _logger;
         private readonly UserContext db;
-        public UsersController(ILogger<UsersController> logger, UserContext context)
+        private readonly IConfiguration _configuration;
+        public UsersController(ILogger<UsersController> logger, UserContext context, IConfiguration configuration)
         {
             _logger = logger;
             db = context;
+            _configuration = configuration;
         }
 
         [HttpGet]
@@ -33,7 +36,7 @@ namespace fullstack.Controllers
 
         [HttpPost("test")]
         [EnableCors("AllowCors")]
-        public object  Post(User user)
+        public object Post(User user)
         {
             _logger.LogInformation("[POST] User!");
             if (ModelState.IsValid)
@@ -66,6 +69,13 @@ namespace fullstack.Controllers
             {
                 _logger.LogError("GOT ERRRO!");
             }
+        }
+
+        [HttpGet("mda")]
+        public string GetMet()
+        {
+            _logger.LogInformation("mda");
+            return _configuration.GetConnectionString("DefaultConnection");
         }
     }
 }

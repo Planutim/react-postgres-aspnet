@@ -1,0 +1,39 @@
+/* Group 17 */
+
+position: absolute;
+width: 189px;
+height: 38px;
+left: 623px;
+top: 693px;
+
+
+
+/* Rectangle 5 */
+
+position: absolute;
+width: 189px;
+height: 38px;
+left: 623px;
+top: 693px;
+
+background: #4A9DFF;
+border-radius: 10px;
+
+
+/* CREATE */
+
+position: absolute;
+width: 51px;
+height: 16px;
+left: 692px;
+top: 704px;
+
+font-family: Ubuntu;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+/* identical to box height */
+
+color: #FFFFFF;
+

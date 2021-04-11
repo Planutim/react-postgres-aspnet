@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 
 namespace fullstack
 {
@@ -25,7 +26,12 @@ namespace fullstack
 
             services.AddControllersWithViews();
 
-            string connection = Configuration.GetConnectionString("DefaultConnection");
+            //string connection = Configuration.GetConnectionString("DefaultConnection");
+            string connection = Environment.GetEnvironmentVariable("POSTGRESQL_CONNECTION");
+            if (connection == null)
+            {
+                connection = Configuration.GetConnectionString("DefaultConnection");
+            }
             services.AddDbContext<UserContext>(options =>
             {
                 options.UseNpgsql(connection);

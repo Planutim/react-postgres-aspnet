@@ -35,5 +35,15 @@ namespace fullstack.Controllers
             })
             .ToArray();
         }
+
+
+        [HttpGet("envvar")]
+        public string GetEnv(){
+            string envvar = Environment.GetEnvironmentVariable("POSTGRESQL_CONNECTION");
+            if(string.IsNullOrEmpty(envvar)){
+                return "no env var";
+            }
+            return envvar;
+        }
     }
 }

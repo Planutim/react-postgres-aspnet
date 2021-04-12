@@ -55,7 +55,7 @@ namespace fullstack.Controllers
         {
             _logger.LogInformation("[POST] Users!");
 
-            //await db.Database.ExecuteSqlRawAsync("TRUNCATE \"Users\"");
+            await db.Database.ExecuteSqlRawAsync("TRUNCATE \"Users\"");
             db.Users.AddRange(users);
             try
             {

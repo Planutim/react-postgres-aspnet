@@ -93,7 +93,7 @@ class App extends React.Component {
         });
         if (rawResponse.ok) {
             this.setState({
-                inputData: [],
+                //inputData: [],
                 isDataOld: true
             })
         }

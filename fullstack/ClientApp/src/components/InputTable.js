@@ -19,8 +19,8 @@ export function InputTable(props) {
                     <thead>
                         <tr>
                             <th>UserID</th>
-                            <th>RegDate</th>
-                            <th>LastActiveDate</th>
+                            <th>Date Registration</th>
+                            <th>Date Last Activity</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -30,7 +30,7 @@ export function InputTable(props) {
             </div>
             <button className="button-add" onClick={props.addInput}>+</button>
             <div className="button-div">
-                <button className="button" type="submit">Send</button>
+                <button className="button" type="submit">Save</button>
             </div>
         </form>
     )

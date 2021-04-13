@@ -130,10 +130,14 @@ class App extends React.Component {
     }
 
     calculateRRD(days) {
-        const rrd = this.state.fetchedData.filter(item => {
+        const filtered = this.state.fetchedData.filter(item => {
+            const diff = getDateDiff(new Date(), item.regDate)
+            return diff>=7
+        })
+        const rrd = filtered.filter(item => {
             let diff = getDateDiff(item.lastActiveDate, item.regDate)
             return diff !== -1 && diff >= days
-        }).length / this.state.fetchedData.length * 100;
+        }).length / filtered.length * 100;
         return Math.round(rrd)
     }
 
